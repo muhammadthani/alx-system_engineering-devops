@@ -1,2 +1,2 @@
 #!/bin/bash
-magic type=string(C)
+magic type=string(C= SCHOOL)
