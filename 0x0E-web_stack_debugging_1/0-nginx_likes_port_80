@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
+# troubleshooting nginx port 80
+# ../sites-enabled/default should be deleted and should be replaced with a copy of
+# ../sites-available/default, is how I fixed the problem. To achieve this, establish a symbolic connection.
+# Note: The flag -f replaces the old file with a new one while -s makes a symbolic link.
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
