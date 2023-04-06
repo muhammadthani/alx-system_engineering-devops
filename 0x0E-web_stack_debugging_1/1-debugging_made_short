@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# The service (init) must state that nginx is not operating while debugging nginx.
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx restart
 pkill -o nginx
