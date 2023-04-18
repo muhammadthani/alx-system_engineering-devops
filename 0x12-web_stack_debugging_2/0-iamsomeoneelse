@@ -1,0 +1,16 @@
+#!/bin/bash
+# Script to run the 'whoami' command under a specified user
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <username>"
+  exit 1
+fi
+
+# Check if the specified user exists
+if id "$1" >/dev/null 2>&1; then
+  # If the user exists, run the 'whoami' command as that user
+  sudo -u "$1" whoami
+else
+  echo "User $1 does not exist"
+  exit 1
+fi

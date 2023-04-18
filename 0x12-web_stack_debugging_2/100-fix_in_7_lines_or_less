@@ -1,0 +1,7 @@
+#!/bin/bash
+
+systemctl stop nginx
+cp /etc/nginx/nginx.conf{,.bak}
+sed -i 's/user\s*nginx/user nginx/' /etc/nginx/nginx.conf
+sed -i 's/listen\s*80/listen *:8080/' /etc/nginx/sites-available/default
+systemctl start nginx
